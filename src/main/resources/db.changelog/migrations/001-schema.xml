@@ -1,0 +1,36 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="
+        http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd">
+
+    <changeSet id="001-customers" author="pavel">
+
+        <createTable tableName="customers" schemaName="sql_agg">
+            <column name="id" type="serial">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="text"/>
+            <column name="surname" type="text"/>
+            <column name="age" type="smallint"/>
+            <column name="phone_number" type="text"/>
+        </createTable>
+
+    </changeSet>
+
+    <changeSet id="002-orders" author="pavel">
+
+        <createTable tableName="orders" schemaName="sql_agg">
+            <column name="id" type="serial">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="order_date" type="date"/>
+            <column name="customer_id" type="int"/>
+            <column name="product_name" type="text"/>
+            <column name="amount" type="int"/>
+        </createTable>
+
+    </changeSet>
+
+</databaseChangeLog>

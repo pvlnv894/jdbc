@@ -1,0 +1,10 @@
+databaseChangeLog:
+  - include:
+      file: migrations/001-schema.xml
+      relativeToChangeLogFile: true
+  - include:
+      file: migrations/002-relations.xml
+      relativeToChangeLogFile: true
+  - include:
+      file: migrations/003-data.sql
+      relativeToChangeLogFile: true
