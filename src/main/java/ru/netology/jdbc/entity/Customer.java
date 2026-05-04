@@ -1,24 +1,25 @@
 package ru.netology.jdbc.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Getter
+@Setter
 @Entity
 @Table(name = "customers", schema = "sql_agg")
 public class Customer {
     @Id
     @GeneratedValue
+    @Column(name = "id")
     private Integer id;
-    @Column(nullable = false)
+    @Column(name = "name",nullable = false)
     private String name;
-    @Column(nullable = false)
+    @Column(name = "surname", nullable = false)
     private String surname;
-    @Column(nullable = false)
+    @Column(name = "age", nullable = false)
     private int age;
+    @Column(name = "phone_number")
     private String phoneNumber;
 }

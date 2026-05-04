@@ -1,28 +1,28 @@
 package ru.netology.jdbc.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.Date;
 
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Setter
+@Getter
 @Entity
 @Table(name = "orders", schema = "sql_agg")
 public class CustomerOrder {
     @Id
     @GeneratedValue
+    @Column(name = "id")
     private Integer id;
-    @Column(nullable = false)
+    @Column(name = "order_date", nullable = false)
     private Date orderDate;
     @ManyToOne
     @JoinColumn(name = "customer_id")
     private Customer customer;
-    @Column(nullable = false)
+    @Column(name = "product_name",nullable = false)
     private String productName;
-    @Column(nullable = false)
+    @Column(name = "amount", nullable = false)
     private int amount;
 }
